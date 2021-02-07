@@ -1,11 +1,14 @@
-import dishList from './menu.json';
-const listRef = document.querySelector('#js-menu');
+import itemTamplate from '../template/template-items.hbs';
+import dishList from '../menu.json';
+// console.log(itemTamplate);
 
+const itemRef = itemTamplate(dishList);
+console.log(itemRef);
 
+const listRef = document.querySelector('.js-menu');
+listRef.insertAdjacentHTML('beforeend', itemRef );
 
-
-
-{/* <li class="menu__item">
+/* <li class="menu__item">
   <article class="card">
     <img
       src="https://s1.eda.ru/StaticContent/Photos/140812180013/140820212258/p_O.jpg"
@@ -43,4 +46,4 @@ const listRef = document.querySelector('#js-menu');
       В корзину
     </button>
   </article>
-</li> */}
+</li> */
