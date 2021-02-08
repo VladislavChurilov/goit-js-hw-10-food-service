@@ -3,7 +3,7 @@ import dishList from '../menu.json';
 // console.log(itemTamplate);
 
 const itemRef = itemTamplate(dishList);
-console.log(itemRef);
+// console.log(itemRef);
 
 const listRef = document.querySelector('.js-menu');
 listRef.insertAdjacentHTML('beforeend', itemRef );
