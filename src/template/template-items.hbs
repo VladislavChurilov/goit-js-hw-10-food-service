@@ -5,7 +5,7 @@
       src="{{image}}"
       alt="{{name}}"
       class="card__image"
-      width="423px"
+      width="430px"
       {{!-- height="250px" --}}
     />
     <div class="card__content">
@@ -20,8 +20,8 @@
       </p>
 
       <ul class="tag-list">
-          {{#each this}}
-        <li class="tag-list__item">{{ingredient}}</li>
+          {{#each ingredients }}
+        <li class="tag-list__item">{{this}}</li>
         {{!-- <li class="tag-list__item">Чеснок</li>
         <li class="tag-list__item">Сметана</li>
         <li class="tag-list__item">Бекон</li>

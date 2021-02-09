@@ -1,7 +1,7 @@
 import itemTamplate from '../template/template-items.hbs';
 import dishList from '../menu.json';
 // console.log(itemTamplate);
-
+// console.dir(dishList);
 const itemRef = itemTamplate(dishList);
 // console.log(itemRef);
 
