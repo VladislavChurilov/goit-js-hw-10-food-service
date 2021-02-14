@@ -1,19 +1,30 @@
-// const Theme = {
-//     LIGHT: 'light-theme',
-//     DARK: 'dark-theme',
-//   };
+const Theme = {
+    LIGHT: 'light-theme',
+    DARK: 'dark-theme',
+  };
 // const myStorage = localStorage;
 // console.log(mystorage.Theme);
 
 const bodyRef = document.querySelector('body');
 const btnRef = document.querySelector('.theme-switch__toggle');
-// const savedLight = localStorage.setItem('light', JSON.stringify(Theme.LIGHT));
+const savedLight = localStorage.setItem('light', JSON.stringify(Theme.LIGHT));
 const a = JSON.parse(localStorage.getItem('light'));
-// const savedDark = localStorage.setItem('dark', JSON.stringify(Theme.DARK));
+const savedDark = localStorage.setItem('dark', JSON.stringify(Theme.DARK));
 const b = JSON.parse(localStorage.getItem('dark'));
 
-
 bodyRef.classList.add(a);
+btnRef.addEventListener("change", () =>  {   
+bodyRef.classList.toggle(a);
+if (bodyRef.classList != a) {
+  bodyRef.classList.toggle(b);  
+}
+
+
+// if(b){
+  
+// }
+
+// bodyRef.classList.add(a);
 
 // if (localStorage.getItem('Theme.LIGHT')) {
 //    JSON.parse(localStorage.getItem('Theme.LIGHT'));
@@ -24,10 +35,16 @@ bodyRef.classList.add(a);
 
 
 
-// function aaa (){
-  btnRef.addEventListener("change", () =>  { 
-  // console.log(event); 
-bodyRef.classList.toggle(b); 
+  
+// btnRef.getAttribute('checked','checked');
+// if(bodyRef.classList.value = 'light-theme dark-theme'){
+//   btnRef.checked = true;
+  // bodyRef.checked = true;
+// }
+// btnRef.checked = false;
+  // console.log(bodyRef.classList.value);
+  // console.log(event.target);
+// bodyRef:checked(b);
 // if(localStorage.getItem('dark')) {
 //   document.getElementById(".theme-switch__toggle").setAttribute('checked','checked');
 // }
