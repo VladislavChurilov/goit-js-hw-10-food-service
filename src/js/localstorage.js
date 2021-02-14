@@ -1,19 +1,71 @@
-const Theme = {
-    LIGHT: 'light-theme',
-    DARK: 'dark-theme',
-  };
+// const Theme = {
+//     LIGHT: 'light-theme',
+//     DARK: 'dark-theme',
+//   };
+// const myStorage = localStorage;
+// console.log(mystorage.Theme);
+
 const bodyRef = document.querySelector('body');
 const btnRef = document.querySelector('.theme-switch__toggle');
+// const savedLight = localStorage.setItem('light', JSON.stringify(Theme.LIGHT));
+const a = JSON.parse(localStorage.getItem('light'));
+// const savedDark = localStorage.setItem('dark', JSON.stringify(Theme.DARK));
+const b = JSON.parse(localStorage.getItem('dark'));
+
+
+bodyRef.classList.add(a);
+
+// if (localStorage.getItem('Theme.LIGHT')) {
+//    JSON.parse(localStorage.getItem('Theme.LIGHT'));
+// console.log(Theme);
+// // console.log(Theme.DARK);
+// }
+
+
+
+
+// function aaa (){
+  btnRef.addEventListener("change", () =>  { 
+  // console.log(event); 
+bodyRef.classList.toggle(b); 
+// if(localStorage.getItem('dark')) {
+//   document.getElementById(".theme-switch__toggle").setAttribute('checked','checked');
+// }
+});
+// if (localStorage.getItem(".theme-switch__toggle").checked) {
+//   console.log("checked");
+// }
+// }
+
+// btnRef.addEventListener("change", () =>  {
+// if(document.querySelector('.theme-switch__toggle').checked) {
+//   localStorage.setItem('.theme-switch__toggle', "false");
+// bodyRef.classList.add(a);
+
+// } else {
+//   localStorage.setItem('.theme-switch__toggle', "true");
+//   bodyRef.classList.toggle(b);
+// }
+// if (localStorage.getItem('.theme-switch__toggle') === "false") {
+//   document.getElementById(".theme-switch__toggle").setAttribute('checked','checked');
+// }
+// }
+// if(bodyRef.classList(Theme.DARK).is('checked')) {
+//   localStorage.setItem('.theme-switch__toggle', "true");
+// }localStorage.setItem('.theme-switch__toggle', "false");
+
 // console.log(btnRef);
 // console.log(bodyRef);
 //   console.log(Theme);
-bodyRef.classList.add(Theme.LIGHT);
-btnRef.addEventListener("change",event =>  {
-  // console.log(event.currentTarget);
-  bodyRef.classList.toggle(Theme.DARK);
-  const savedStorage = localStorage.setItem('Theme', JSON.stringify(Theme.DARK));
-  console.log(savedStorage);
-});
+// bodyRef.classList.add(Theme.LIGHT);
+// btnRef.addEventListener("change",event =>  {
+//   // console.log(event.currentTarget);
+//   bodyRef.classList.toggle(Theme.DARK);
+//   const savedStorage = localStorage.setItem('Theme', JSON.stringify(Theme.DARK));
+//   // console.log(savedStorage);
+//   console.log(Theme.DARK);
+//   return savedStorage;
+// });
 
 //  const savedStorage = localStorage.setItem('Theme', JSON.stringify(Theme.DARK));
 // //  const parsedStorage = JSON.parse(savedStorage);
