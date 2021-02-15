@@ -14,11 +14,12 @@ const lightTheme = JSON.parse(localStorage.getItem('light'));
 bodyRef.classList.add(lightTheme);
 btnRef.addEventListener("change", addDarkTheme);
 
-
 function addDarkTheme() { 
   bodyRef.classList.toggle(lightTheme);
   bodyRef.classList.toggle(JSON.parse(localStorage.getItem('dark')));
-  bodyRef.classList != lightTheme? btnRef.setAttribute('checked','') : btnRef.removeAttribute('checked','');      
+  bodyRef.classList != lightTheme? 
+  btnRef.setAttribute('checked','') 
+  : btnRef.removeAttribute('checked','');      
 }
 // function labelPrevent(event) {
 //   event.preventDefault();
