@@ -7,30 +7,92 @@ const Theme = {
 const bodyRef = document.querySelector('body');
 const btnRef = document.querySelector('.theme-switch__toggle');
 
-const savedLight = localStorage.setItem('light', JSON.stringify(Theme.LIGHT));
-const savedDark = localStorage.setItem('dark', JSON.stringify(Theme.DARK));
+ localStorage.setItem('light', JSON.stringify(Theme.LIGHT));
+ localStorage.setItem('dark', JSON.stringify(Theme.DARK));
 const lightTheme = JSON.parse(localStorage.getItem('light'));
 const darkTheme = JSON.parse(localStorage.getItem('dark'));
-
-if (btnRef.className !== 'dark-theme') {
-  console.log('hhh');
-  bodyRef.classList.add(lightTheme);
-}
+// const savedTheme = localStorage.setItem('themes', JSON.stringify(Theme));
+// const theme = JSON.parse(localStorage.getItem("themes"));
+// btnRef.addEventListener("change", a);
+// addTheme()
+// function a() {
+//   if (localStorage.getItem('light') === null) {
+//     addDarkTheme()
+//   }
+//   console.log(localStorage.getItem('light'));
+// }
+// console.log(localStorage.getItem('light'));
+// addDarkTheme()
+// addTheme();
+if (true) {    
+    
+  addDarkTheme();
+} else {
+addLightTheme()
+};
 
 btnRef.addEventListener("change", addTheme);
-function addTheme(event) {
-  // event.preventDefault();
-  
-  bodyRef.classList.toggle(darkTheme);
-  
-  if (bodyRef.className !== 'dark-theme') {
-   
-    bodyRef.classList.toggle(lightTheme);
+
+function addTheme() {
+  // bodyRef.classList.add(lightTheme);
+console.log(bodyRef.className);
+
+// addLightTheme();
+  if (true) {    
+    
+    addDarkTheme();
   }
+  addLightTheme()
+}
+
+function addDarkTheme() {
+
+bodyRef.classList.toggle(darkTheme);
+bodyRef.classList.remove(lightTheme);
+// localStorage.removeItem('light');
+btnRef.setAttribute('checked','');
+// btnRef.checked === true; 
+}
+
+function addLightTheme() {
+  
+  bodyRef.classList.add(lightTheme);
+  // localStorage.removeItem('dark');
+  // btnRef.checked === false;
+}
+// 
+// localStorage.removeItem('theme');
+// export default { load, save };
+
+
+
+// if (btnRef.className !== 'dark-theme') {
+//   console.log('hhh');
+//   bodyRef.classList.add(lightTheme);
+// }
+
+// btnRef.addEventListener("change", addTheme);
+// function addTheme(event) {
+//   // event.preventDefault();
+  
+//   bodyRef.classList.toggle(darkTheme);
+  
+//   if (bodyRef.className !== 'dark-theme') {
+   
+//     bodyRef.classList.toggle(lightTheme);
+//   }
   // btnRef.setAttribute('checked','');
   // bodyRef.classList.add(darkTheme);
   // console.log(btnRef.checked);
-}
+// }
+
+
+
+
+
+
+
+
 // 
 
 // btnRef.checked === false? 
