@@ -6,37 +6,31 @@ const Theme = {
 const bodyRef = document.querySelector('body');
 const btnRef = document.querySelector('.theme-switch__toggle');
 
-const lightTheme = JSON.parse(localStorage.getItem('light'));
-const darkTheme = JSON.parse(localStorage.getItem('dark'));
-// localStorage.setItem('themes', JSON.stringify(Theme));
-// const theme = JSON.parse(localStorage.getItem("Theme"));
+const currentTheme = JSON.parse(localStorage.getItem("theme"));
 
-bodyRef.classList.remove(lightTheme);
-bodyRef.classList.remove(darkTheme);
+bodyRef.classList.remove(currentTheme);
 
-if (!darkTheme) {  
-  localStorage.setItem('light', JSON.stringify(Theme.LIGHT));
-  bodyRef.classList.add(lightTheme);
+if (currentTheme !== 'dark-theme') {  
+  localStorage.setItem('theme', JSON.stringify(Theme.LIGHT));    
 } else{
-  localStorage.setItem('dark', JSON.stringify(Theme.DARK));
-  bodyRef.classList.add(darkTheme);
-  btnRef.checked = true;
+  localStorage.setItem('theme', JSON.stringify(Theme.DARK));  
+  btnRef.checked = true;  
 };
+bodyRef.classList.add(currentTheme);
+btnRef.addEventListener("change",addTheme);
 
-btnRef.addEventListener("change", addTheme);
-
-function addTheme() {
-  bodyRef.classList.toggle(lightTheme);
-  bodyRef.className === 'light-theme'? 
-  localStorage.setItem('light', JSON.stringify(Theme.LIGHT))
-  :localStorage.setItem('dark', JSON.stringify(Theme.DARK));
-  bodyRef.classList.add(darkTheme);
-  bodyRef.classList.toggle(darkTheme);
-  if (bodyRef.className === 'light-theme') {
-    localStorage.removeItem('dark');
-    return
-  } else{
-    localStorage.setItem('dark', JSON.stringify(Theme.DARK))
-  bodyRef.classList.add(darkTheme);
-  }
+function addTheme() {   
+  if (bodyRef.className !== 'light-theme') {
+    localStorage.setItem('theme', JSON.stringify(Theme.DARK));    
+// return
+  } 
+bodyRef.classList.toggle(currentTheme);
+  if (bodyRef.className !== 'dark-theme') {
+    localStorage.setItem('theme', JSON.stringify(Theme.LIGHT))
+// return
+  }   
+  if (btnRef.checked === true) {
+    localStorage.setItem('theme', JSON.stringify(Theme.DARK));
+    // return
+  }  
 }
